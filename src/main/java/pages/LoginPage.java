@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import utils.Helpers;
 
 import java.time.Duration;
 
@@ -38,5 +40,9 @@ public class LoginPage {
         // Waits for the login button to be clickable and clicks to submit the form
         WebElement loginBtn = wait.until(ExpectedConditions.elementToBeClickable(loginButton));
         loginBtn.click();
+
+        WebElement dashboardHeader = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h6.oxd-text.oxd-text--h6.oxd-topbar-header-breadcrumb-module")));
+        Assert.assertEquals(dashboardHeader.getText(), "Dashboard");
+
     }
 }

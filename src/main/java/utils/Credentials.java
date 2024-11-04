@@ -5,7 +5,8 @@ public class Credentials {
     private String user = "Admin";
     private String password = "admin123";
 
-    public Credentials(String user, String password) {
+
+    public Credentials() {
         this.user = user;
         this.password = password;
     }
@@ -17,4 +18,5 @@ public class Credentials {
     public String getPassword() {
         return password;
     }
+
 }
